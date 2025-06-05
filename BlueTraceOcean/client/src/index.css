@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 84% 5%;
+  --muted: 210 40% 98%;
+  --muted-foreground: 215 16% 47%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 84% 5%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 84% 5%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --primary: 222 47% 11%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 11%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 222 84% 5%;
+  --radius: 0.5rem;
+  
+  /* Ocean theme colors */
+  --ocean-deep: 214 92% 33%;
+  --ocean-surface: 214 92% 54%;
+  --ocean-light: 214 86% 70%;
+  --ocean-shallow: 214 100% 94%;
+  --ocean-foam: 0 0% 100%;
+  --coral-green: 160 84% 39%;
+}
+
+.dark {
+  --background: 222 84% 5%;
+  --foreground: 210 40% 98%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  --popover: 222 84% 5%;
+  --popover-foreground: 210 40% 98%;
+  --card: 222 84% 5%;
+  --card-foreground: 210 40% 98%;
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 217 33% 17%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 212 95% 76%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .ocean-deep {
+    color: hsl(var(--ocean-deep));
+  }
+  
+  .bg-ocean-deep {
+    background-color: hsl(var(--ocean-deep));
+  }
+  
+  .ocean-surface {
+    color: hsl(var(--ocean-surface));
+  }
+  
+  .bg-ocean-surface {
+    background-color: hsl(var(--ocean-surface));
+  }
+  
+  .ocean-light {
+    color: hsl(var(--ocean-light));
+  }
+  
+  .bg-ocean-light {
+    background-color: hsl(var(--ocean-light));
+  }
+  
+  .ocean-shallow {
+    color: hsl(var(--ocean-shallow));
+  }
+  
+  .bg-ocean-shallow {
+    background-color: hsl(var(--ocean-shallow));
+  }
+  
+  .coral-green {
+    color: hsl(var(--coral-green));
+  }
+  
+  .bg-coral-green {
+    background-color: hsl(var(--coral-green));
+  }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-wave {
+  animation: wave 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
